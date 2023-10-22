@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StatsContoroller : MonoBehaviour
@@ -9,7 +10,8 @@ public class StatsContoroller : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject _victoryScreen;
     [SerializeField] private GameObject _lowerHUD;
-    [SerializeField] private GameObject _toMenuButton;
+
+    [SerializeField] private GameObject _pauseMenu;
 
     [SerializeField] private Slider _missionProgressBar;
 
@@ -19,27 +21,26 @@ public class StatsContoroller : MonoBehaviour
     [SerializeField] private TMP_Text _armyBar;
 
 	private bool _isPlayerWin = false;
+    private bool _isPauseMenuOn = false;
 
 	void Start()
     {
 		_victoryScreen.SetActive(false);
 
-		_toMenuButton.SetActive(false);
-
-		
+		_pauseMenu.SetActive(false);	
 	}
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.K))
-        //    ShowVictoryScreen();
+        if (Input.GetKeyDown(KeyCode.Escape))
+			OnPauseMenu();
 
         if (_missionProgressBar.value >= _missionProgressBar.maxValue)
             ShowVictoryScreen();
 
 		_resourcesBar.text = $"{ResourcesController.Instance.Resources}/{ResourcesController.Instance.MaxResourcesAmount}";
 
-		_armyBar.text = $"{ResourcesController.Instance.Army}/{ResourcesController.Instance.MaxArmyCapacity}"; 
+		_armyBar.text = $"{ResourcesController.Instance.Army}/{ResourcesController.Instance.MaxArmyCapacity}";
 	}
 
     public void ShowVictoryScreen()
@@ -61,12 +62,14 @@ public class StatsContoroller : MonoBehaviour
 		_victoryScreen.SetActive(true);	
 	}
 
-    public static void UpdateBars()
+    public void OnPauseMenu()
     {
-		StatsContoroller stats = new StatsContoroller();
+        _isPauseMenuOn = !_isPauseMenuOn;
 
-		//stats._resourcesBar.text = $"{(int)ResorcesController.Instance.Resources}/{ResorcesController.Instance.MaxResourcesAmount}";
+        Time.timeScale = _isPauseMenuOn ? 0f: 1f;
 
-		//stats._armyBar.text = $"{(int)ResorcesController.Instance.Army}/{ResorcesController.Instance.MaxArmyCapacity}";
+		_lowerHUD.SetActive(!_isPauseMenuOn);
+
+		_pauseMenu.SetActive(_isPauseMenuOn);
 	}
 }

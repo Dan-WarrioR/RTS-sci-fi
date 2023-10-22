@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneChooser : MonoBehaviour
 {
 
-    public void LoadLevel(int levelID)
+    static public void LoadLevel(int levelID)
     {
         SceneManager.LoadScene(levelID);
     }
