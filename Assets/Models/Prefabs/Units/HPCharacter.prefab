@@ -6109,6 +6109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <UnitData>k__BackingField: {fileID: 11400000, guid: 74b568aca1eee5a4b8836672a26cf3f5,
     type: 2}
+  _shootingPlace: {fileID: 0}
   _selectionSprite: {fileID: 4000013404005316}
   _canShootIndicator: {fileID: 6433832496427366694}
   _shootingSound: {fileID: 7384366722300573088}
@@ -6152,7 +6153,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3a569c92447467348bc727efd2526441, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.01
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

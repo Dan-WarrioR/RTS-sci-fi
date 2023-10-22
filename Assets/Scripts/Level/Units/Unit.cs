@@ -10,6 +10,8 @@ public class Unit : MonoBehaviour
 {
 	[field: SerializeField] public UnitData UnitData { get; private set; }
 
+	[SerializeField] private Transform _shootingPlace;
+
 	[Header("Visual")]
 
 	[SerializeField] private Transform _selectionSprite;
@@ -126,7 +128,7 @@ public class Unit : MonoBehaviour
 		yield return new WaitForSeconds(delay);
 
 		//transform.DOScale(Vector3.zero, _timeBeforeDeath);
-		transform.DOMove(new Vector3(transform.position.x, transform.position.y - 2f, transform.position.z), delay);
+		transform.DOMove(new Vector3(transform.position.x, transform.position.y - 10f, transform.position.z), delay);
 
 		Destroy(transform.gameObject, delay);
 	}

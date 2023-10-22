@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -72,4 +70,14 @@ public class StatsContoroller : MonoBehaviour
 
 		_pauseMenu.SetActive(_isPauseMenuOn);
 	}
+
+	public void ResetTimeScaleToDeffault() //wrong
+	{
+        Time.timeScale = 1f;
+	}
+
+    public void QuitGame() //wrong
+    {
+        Application.Quit();
+    }
 }
