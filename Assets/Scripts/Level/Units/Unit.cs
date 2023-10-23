@@ -18,6 +18,9 @@ public class Unit : MonoBehaviour
 	[SerializeField] private Transform _canShootIndicator;
 	[SerializeField] private AudioSource _shootingSound;
 
+	[field: SerializeField] public EntityInformationWindow InformationWindow { get; set; }
+	[field: SerializeField] public GameObject InformationWindowObject { get; set; }
+
 	[SerializeField] private float _timeBeforeDeath = 2f;
 
 	public float Health
@@ -99,6 +102,41 @@ public class Unit : MonoBehaviour
 		}
 
 		//Debug.Log($"{_availablePointsToMove.Count} - точок маршруту");
+	}
+
+	private void OnMouseOver()
+	{
+		if (!InformationWindowObject)
+			return;
+
+		InformationWindowObject.gameObject.SetActive(true);
+
+		InformationWindow.EntityImage.sprite = UnitData.EntityImage;
+
+		InformationWindow.EntityName.text = UnitData.Name;
+
+		InformationWindow.HealthBar.value = Health;
+		InformationWindow.HealthBarText.text = Health.ToString();
+
+		InformationWindow.ShieldBar.value = Shield;
+		InformationWindow.ShieldBarText.text = Shield.ToString();
+
+		InformationWindow.DamageBar.value = UnitData.Damage;
+		InformationWindow.DamageBarText.text = UnitData.Damage.ToString();
+
+		InformationWindow.PriceBar.value = UnitData.UnitResourceCost;
+		InformationWindow.PriceBarText.text = UnitData.UnitResourceCost.ToString();
+
+		InformationWindow.BarracUnitSize.value = UnitData.UnitCost;
+		InformationWindow.BarracBarText.text = UnitData.UnitCost.ToString();
+	}
+
+	private void OnMouseExit()
+	{
+		if (!InformationWindowObject)
+			return;
+
+		InformationWindowObject.gameObject.SetActive(false);
 	}
 
 	#region Death

@@ -9,6 +9,9 @@ public class UnitSpawner : MonoBehaviour
 
     [SerializeField] private Transform _unitParent;
 
+	[SerializeField] private EntityInformationWindow InformationWindow;
+	[SerializeField] private GameObject InformationWindowObject;
+
 	public void SpawnUnitOnZone(GameObject unit)
     {
 		if (!unit.GetComponent<Unit>())
@@ -27,7 +30,14 @@ public class UnitSpawner : MonoBehaviour
 
         Vector3 spawnPoint = new(middlePosition.x, _terrain.SampleHeight(middlePosition), middlePosition.z);
 
-        Instantiate(unit, spawnPoint, Quaternion.identity, _unitParent);
+        GameObject unitObject = Instantiate(unit, spawnPoint, Quaternion.identity, _unitParent);
+
+		if (unitObject.TryGetComponent(out Unit unitScript))
+		{
+			unitScript.InformationWindow = InformationWindow;
+
+			unitScript.InformationWindowObject = InformationWindowObject;
+		}
     }
 
 	private void OnDrawGizmosSelected()

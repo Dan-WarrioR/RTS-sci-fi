@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Commander
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\u041A\u043E\u043C\u0430\u043D\u0434\u0438\u0440 \u041B\u044E\u043A"
+  <EntityImage>k__BackingField: {fileID: 21300000, guid: 160f8f90e8a6e4747aad032718a8fb50,
+    type: 3}
   <Health>k__BackingField: 500
   <Shield>k__BackingField: 500
   <Damage>k__BackingField: 120

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd5daa2fbb80604fa8bceaed884630d, type: 3}
   m_Name: Soldier
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: "\u041E\u043C\u0435\u0433\u0430\u041C\u0430\u0440\u0438\u043D"
+  <Name>k__BackingField: "\u0429\u043C\u0435\u0433\u0430 \u041C\u0430\u0440\u0438\u043D"
+  <EntityImage>k__BackingField: {fileID: 21300000, guid: 4913a40983df0d643baa5ccb358b1a8e,
+    type: 3}
   <Health>k__BackingField: 100
   <Shield>k__BackingField: 100
   <Damage>k__BackingField: 50

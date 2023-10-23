@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu]
 public class UnitData : ScriptableObject, IEntity
 {
 	[field: SerializeField] public string Name { get; private set; }
+
+	[field: SerializeField] public Sprite EntityImage { get; private set; }
 
 	[field: SerializeField] public float Health { get; set; } = 100f; //wrong
 

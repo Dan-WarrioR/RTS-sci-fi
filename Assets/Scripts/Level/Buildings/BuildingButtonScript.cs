@@ -1,23 +1,13 @@
-using System.Collections;
 using UnityEngine;
 
-public class EnergyCell : MonoBehaviour
+public class BuildingButton : MonoBehaviour
 {
-	[SerializeField][Range(1f, 10f)] private int _resourcesIncomSpeed = 1;
-	[SerializeField] private float _delayBeforeNextMine = 2f;
+	[SerializeField] private BuildingData BuildingData;
 
-	[field: SerializeField] public BuildingData BuildingData { get; private set; }
+	[SerializeField] private EntityInformationWindow InformationWindow;
+	[SerializeField] private GameObject InformationWindowObject;
 
-	public int BuildingResourceCost { get; set; }
-
-	[field: SerializeField] public EntityInformationWindow InformationWindow { get; set; }
-	[field: SerializeField] public GameObject InformationWindowObject { get; set; }
-	private void Awake()
-	{
-		StartCoroutine(MineResources(_delayBeforeNextMine));
-	}
-
-	private void OnMouseOver()
+	public void ShowInfo()
 	{
 		if (!InformationWindowObject)
 			return;
@@ -26,6 +16,7 @@ public class EnergyCell : MonoBehaviour
 
 		InformationWindow.DamageBar.gameObject.SetActive(false);
 		InformationWindow.BarracUnitSize.gameObject.SetActive(false);
+
 
 		InformationWindow.EntityImage.sprite = BuildingData.EntityImage;
 
@@ -41,7 +32,7 @@ public class EnergyCell : MonoBehaviour
 		InformationWindow.PriceBarText.text = BuildingData.BuildingResourceCost.ToString();
 	}
 
-	private void OnMouseExit()
+	public void HideInfo()
 	{
 		if (!InformationWindowObject)
 			return;
@@ -51,15 +42,4 @@ public class EnergyCell : MonoBehaviour
 		InformationWindow.DamageBar.gameObject.SetActive(true);
 		InformationWindow.BarracUnitSize.gameObject.SetActive(true);
 	}
-
-	private IEnumerator MineResources(float delay)
-	{
-		yield return new WaitForSeconds(delay);
-
-		ResourcesController.Instance.Resources += _resourcesIncomSpeed;
-
-		StartCoroutine(MineResources(delay));
-	}
-
-
 }

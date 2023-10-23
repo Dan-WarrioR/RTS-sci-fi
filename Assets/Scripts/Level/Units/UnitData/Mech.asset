@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Mech
   m_EditorClassIdentifier: 
   <Name>k__BackingField: "\u0411\u0435\u0437\u0441\u043C\u0435\u0440\u0442\u043D\u0438\u0439"
+  <EntityImage>k__BackingField: {fileID: 21300000, guid: b9031bb7327c75a4cbb98571a663d49e,
+    type: 3}
   <Health>k__BackingField: 200
   <Shield>k__BackingField: 200
   <Damage>k__BackingField: 60

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5454231350066972403}
   - component: {fileID: 4374599842611593371}
   - component: {fileID: 758444872914339368}
+  - component: {fileID: 3292513147924797376}
   m_Layer: 0
   m_Name: MainBaseParent
   m_TagString: Untagged
@@ -63,7 +64,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _armyIncreaseNumber: 10
-  <BuildingPrice>k__BackingField: 20
+  <BuildingData>k__BackingField: {fileID: 11400000, guid: afe514885fe078047acaef2feb4b1d86,
+    type: 2}
+  <InformationWindow>k__BackingField: {fileID: 0}
+  <InformationWindowObject>k__BackingField: {fileID: 0}
+--- !u!65 &3292513147924797376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068719963689611076}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 5, z: 9}
+  m_Center: {x: -0.25, y: 2, z: 0.12}
 --- !u!1001 &207652970353583800
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,9 +1,15 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class PlacementSystem : MonoBehaviour
 {
+	[Header("Information GUI")]
+
+	[SerializeField] private EntityInformationWindow InformationWindow;
+	[SerializeField] private GameObject InformationWindowObject;
+
 	[Header("GridSystem")]
 
     [SerializeField] private InputManager _inputManager;
@@ -32,8 +38,21 @@ public class PlacementSystem : MonoBehaviour
 	private void Start()
 	{
 		StopPlacement();
-
 		_buildingData = new();
+
+		//for (int i = 0; i < _buildingsDatabase.ObjectData.Count; i++) //VERY WRONG SHIT, set simillar number in datas
+		//{
+		//	GameObject newObject = _buildingsDatabase.ObjectData[i].Prefab;
+
+		//	if (newObject.TryGetComponent(out Barracs barrac))
+		//	{
+		//		barrac.BuildingData.BuildingResourceCost = _buildingsDatabase.ObjectData[i].BuildingPrice;
+		//	}
+		//	else if (newObject.TryGetComponent(out EnergyCell energyCell))
+		//	{
+		//		energyCell.BuildingData.BuildingResourceCost = _buildingsDatabase.ObjectData[i].BuildingPrice;
+		//	}
+		//}
 	}
 
 	public void StartPlacement(int id)
@@ -84,7 +103,19 @@ public class PlacementSystem : MonoBehaviour
 		//GridData selectedData = _buildingsDatabase.ObjectData[selectedObjectIndex].ID == 0 ? floorData : furnitureData;
 
 		if (newObject.TryGetComponent(out Barracs barrac))
+		{
 			barrac.IncreaseArmyCapacity();
+
+			barrac.InformationWindow = InformationWindow;
+
+			barrac.InformationWindowObject = InformationWindowObject;
+		}
+		else if (newObject.TryGetComponent(out EnergyCell energyCell))
+		{
+			energyCell.InformationWindow = InformationWindow;
+
+			energyCell.InformationWindowObject = InformationWindowObject;
+		}	
 
 		GridData selectedData = _buildingData;
 

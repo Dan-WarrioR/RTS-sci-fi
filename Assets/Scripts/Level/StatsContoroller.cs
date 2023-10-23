@@ -20,7 +20,7 @@ public class StatsContoroller : MonoBehaviour
 
 	private bool _isPlayerWin = false;
     private bool _isPauseMenuOn = false;
-
+    
 	void Start()
     {
 		_victoryScreen.SetActive(false);
