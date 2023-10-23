@@ -28,7 +28,7 @@ public class ResourcesController
 		}
 		set
 		{
-			if (value > 0 && value <= MaxResourcesAmount)
+			if (value >= 0 && value <= MaxResourcesAmount)
 			{
 				_resourcesAmount = value;
 			}
@@ -48,7 +48,7 @@ public class ResourcesController
 		}
 		set
 		{
-			if (value > 0 && value <= MaxArmyCapacity)
+			if (value >= 0 && value <= MaxArmyCapacity)
 			{
 				_armyCapacity = value;
 			}

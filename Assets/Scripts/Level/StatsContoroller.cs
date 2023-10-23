@@ -25,7 +25,13 @@ public class StatsContoroller : MonoBehaviour
     {
 		_victoryScreen.SetActive(false);
 
-		_pauseMenu.SetActive(false);	
+		_pauseMenu.SetActive(false);
+
+		ResourcesController.Instance.ArmyCapacity = 0;
+
+		ResourcesController.Instance.ArmyUnitCount = 0;
+
+        ResourcesController.Instance.Resources = 0;
 	}
 
     void Update()
