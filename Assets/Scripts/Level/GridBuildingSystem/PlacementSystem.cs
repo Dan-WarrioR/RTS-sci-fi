@@ -133,8 +133,7 @@ public class PlacementSystem : MonoBehaviour
 		if (_terrain.SampleHeight(_grid.CellToWorld(gridPosition)) <= _gridVisualization.transform.position.y - 1f)
 			return false;
 
-		if (ResourcesController.Instance.Resources + _buildingsDatabase.ObjectData[selectedObjectIndex].BuildingPrice > ResourcesController.Instance.MaxResourcesAmount || 
-			ResourcesController.Instance.Resources - _buildingsDatabase.ObjectData[selectedObjectIndex].BuildingPrice < 0)
+		if (ResourcesController.Instance.Resources - _buildingsDatabase.ObjectData[selectedObjectIndex].BuildingPrice < 0)
 			return false;
 
 		return selectedData.CanPlaceObjectAt(gridPosition, _buildingsDatabase.ObjectData[selectedObjectIndex].Size);
