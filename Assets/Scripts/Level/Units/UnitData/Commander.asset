@@ -19,4 +19,4 @@ MonoBehaviour:
   <Shield>k__BackingField: 500
   <Damage>k__BackingField: 120
   <UnitResourceCost>k__BackingField: 100
-  <UnitCost>k__BackingField: 120
+  <UnitCost>k__BackingField: 40
