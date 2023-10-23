@@ -1,13 +1,11 @@
 using DG.Tweening;
-using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class LavaEvent : MonoBehaviour
 {
 	[Header("KillingSettings")]
-	[SerializeField] private float _lavaDamage = 10f;
+	[SerializeField] private float _lavaDamage = 100f;
 
 	[Header("LavaPositionsPerPhase")]
 
@@ -25,7 +23,6 @@ public class LavaEvent : MonoBehaviour
 
 	[SerializeField] private AudioSource _burnSound;
 	[SerializeField] private AudioSource _lavaSound;
-
 
 	public enum Phases
 	{
@@ -147,7 +144,7 @@ public class LavaEvent : MonoBehaviour
 		if (target.TryGetComponent(out Unit unit))
 		{
 			if (unit.IsAlive)
-				unit.TakeDamage(_lavaDamage);
+				unit.TakeDamage(_lavaDamage * Time.deltaTime);
 		}
 	}
 }

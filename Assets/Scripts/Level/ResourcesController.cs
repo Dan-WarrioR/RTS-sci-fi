@@ -40,7 +40,7 @@ public class ResourcesController
 
 	public int MaxArmyCapacity => 200;
 	
-	public int Army
+	public int ArmyCapacity 
 	{
 		get
 		{
@@ -54,5 +54,24 @@ public class ResourcesController
 			}
 		}
 	}
+
 	private int _armyCapacity;
+
+
+	public int ArmyUnitCount
+	{
+		get
+		{
+			return _armyUnitCount;
+		}
+		set
+		{
+			if (value >= 0 && value <= MaxArmyCapacity)
+			{
+				_armyUnitCount = value;
+			}
+		}
+	}
+
+	private int _armyUnitCount;
 }

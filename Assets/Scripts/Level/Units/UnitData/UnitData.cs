@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class UnitData : ScriptableObject
+public class UnitData : ScriptableObject, IEntity
 {
 	[field: SerializeField] public string Name { get; private set; }
 

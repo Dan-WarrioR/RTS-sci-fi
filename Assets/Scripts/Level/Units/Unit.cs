@@ -106,7 +106,7 @@ public class Unit : MonoBehaviour
 	{
 		IsAlive = false;
 
-		ResourcesController.Instance.Army -= UnitData.UnitCost;
+		ResourcesController.Instance.ArmyUnitCount -= UnitData.UnitCost;
 
 		StopRunningAnimation();
 		StopShooting();

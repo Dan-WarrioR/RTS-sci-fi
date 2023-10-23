@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c60f66b10450c40a4d0c22ae679064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _armyIncreaseNumber: 5
+  _armyIncreaseNumber: 10
+  <BuildingPrice>k__BackingField: 20
 --- !u!1001 &207652970353583800
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class StatsContoroller : MonoBehaviour
 
 		_resourcesBar.text = $"{ResourcesController.Instance.Resources}/{ResourcesController.Instance.MaxResourcesAmount}";
 
-		_armyBar.text = $"{ResourcesController.Instance.Army}/{ResourcesController.Instance.MaxArmyCapacity}";
+		_armyBar.text = $"{ResourcesController.Instance.ArmyUnitCount}/{ResourcesController.Instance.ArmyCapacity}";
 	}
 
     public void ShowVictoryScreen()

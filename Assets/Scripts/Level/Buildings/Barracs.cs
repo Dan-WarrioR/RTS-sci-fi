@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Barracs : MonoBehaviour
 {
-	[SerializeField][Range(1f, 10f)] private int _armyIncreaseNumber = 5;
+	[SerializeField] private int _armyIncreaseNumber = 10;
 
 	[field: SerializeField] public float BuildingPrice { get; private set; } = 20f;
 
-	private void Awake()
+	public void IncreaseArmyCapacity()
 	{
-		ResourcesController.Instance.Army += _armyIncreaseNumber;
+		ResourcesController.Instance.ArmyCapacity += _armyIncreaseNumber;
 	}
 }

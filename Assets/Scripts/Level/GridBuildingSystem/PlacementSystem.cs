@@ -83,6 +83,9 @@ public class PlacementSystem : MonoBehaviour
 
 		//GridData selectedData = _buildingsDatabase.ObjectData[selectedObjectIndex].ID == 0 ? floorData : furnitureData;
 
+		if (newObject.TryGetComponent(out Barracs barrac))
+			barrac.IncreaseArmyCapacity();
+
 		GridData selectedData = _buildingData;
 
 		selectedData.AddObjectAt(gridPosition, _buildingsDatabase.ObjectData[_selectedObjectIndex].Size, _buildingsDatabase.ObjectData[_selectedObjectIndex].ID, _placedGameObjects.Count - 1);
