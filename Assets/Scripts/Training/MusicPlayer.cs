@@ -32,6 +32,11 @@ namespace Training
 
 
 
+		public void SetVolume(float volume)
+		{
+			AudioManager.SetVolume(volume);
+		}
+
 		public void PlayNext()
         {
             AudioManager.PlayNextTrack();

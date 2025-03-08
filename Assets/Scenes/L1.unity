@@ -92346,6 +92346,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1782995550}
     m_Modifications:
+    - target: {fileID: 2953262046938525585, guid: 42550a6e6a601d845abee0289bbf8230,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953262046938525585, guid: 42550a6e6a601d845abee0289bbf8230,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4641485619075284792, guid: 42550a6e6a601d845abee0289bbf8230,
         type: 3}
       propertyPath: shownPoint
@@ -92360,6 +92370,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MusicPlayerModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495610480349537846, guid: 42550a6e6a601d845abee0289bbf8230,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495610480349537846, guid: 42550a6e6a601d845abee0289bbf8230,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495610480349537846, guid: 42550a6e6a601d845abee0289bbf8230,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7699914845039109134, guid: 42550a6e6a601d845abee0289bbf8230,
         type: 3}
